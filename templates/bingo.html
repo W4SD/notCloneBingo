@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>notPAF BINGO</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bingo.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+
+    <div class="col-2 sidebar">
+      <img src="{{ url_for('static', filename='images/NOTpaflogo.png') }}" class="img-fluid juicy-logo"
+           alt="not paf lofo">
+      <hr/>
+      <h3>Pelin säännöt:</h3>
+      <p>
+        Kun sääntö "osuu", pitää "ottaa" huikka omasta kisa juomasta.<br>
+        Usempi sääntö voi osua päällekkäin aka. "Tupla-Otto"
+      </p>
+      <ul>
+        <li>Otto-sarakkeen numero</li>
+        <li>Henkilökohtainen vaakarivi</li>
+        <li>'Otto'-numero aka kaikki kasit</li>
+        <li>Erikoisnumerot (7,21,69)</li>
+      </ul>
+      <p>
+        Lisänä bingot voittanut voittaa shotin x bingon määrä, <br>
+        josta pitää itse juoda ainakin yksi.
+      </p>
+      <div class="row kuponkit">
+        <div class="col-auto">
+          <button type="button" id="dec-btn" onclick="decAmount()">-</button>
+        </div>
+        <div class="col-auto">
+          <span id="amount">1</span>
+        </div>
+        <div class="col-auto">
+          <button type="button" id="add-btn" onclick="addAmount()">+</button>
+
+        </div>
+      </div>
+      <button type="button" onclick="generateCards()" class="arvo-nappi">Arvo kupongit</button>
+    </div>
+
+    <div class="col-auto" id="game">
+      {% with BingoCard=BingoCards %}
+        {% include 'bingoCard.html' %}
+      {% endwith %}
+    </div>
+
+  </div>
+</div>
+<script src="{{ url_for('static', filename='js/game.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cards.js') }}"></script>
+</body>
+</html>

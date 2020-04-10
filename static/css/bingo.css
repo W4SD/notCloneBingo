@@ -1,0 +1,187 @@
+/* contact@juicy.games */
+
+@font-face {
+    font-family: "bingo";
+    src: url("../fonts/Bitter-Bold.ttf");
+}
+
+@font-face {
+    font-family: "bingo-numbers";
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+/*
+PAF COLORS
+- card bg - ffaddc91
+- stripe 1 - 206b42
+- stripe 2 - 1d633f
+*/
+
+body {
+    /*background-image: linear-gradient(135deg,*/
+    /*    #7585ff 25%, #8ab9ff 25%, #8ab9ff 50%,*/
+    /*    #7585ff 50%, #7585ff 75%, #8ab9ff 75%,*/
+    /*    #8ab9ff 100%);*/
+    /*background-image: linear-gradient(135deg, #1727a3 25%, #233f9e 25%, #233f9e 50%, #1727a3 50%, #1727a3 75%, #233f9e 75%, #233f9e 100%);*/
+    /*background-image: linear-gradient(135deg, #4659eb 25%, #24c8ff 25%, #24c8ff 50%, #4659eb 50%, #4659eb 75%, #24c8ff 75%, #24c8ff 100%);*/
+    /* PAF COLOR*/
+    background-image: linear-gradient(135deg, #1d633f 25%, #206b42 25%, #206b42 50%, #1d633f 50%, #1d633f 75%, #206b42 75%, #206b42 100%);
+    /* RAY ish COLOR*/
+    /*background-image: linear-gradient(135deg, #0079eb 25%, #71d0f0 25%, #71d0f0 50%, #0079eb 50%, #0079eb 75%, #71d0f0 75%, #71d0f0 100%);*/
+
+    background-size: 282.84px 282.84px;
+
+}
+
+.container {
+    margin-top: 2vmax;
+    max-width: none !important;
+}
+
+.sidebar {
+    min-width: 250px !important;
+    min-height: 1000px !important;
+
+    /*PAF BG COLOR : eff0e9*/
+    background-color: #eff0e9;
+    border-radius: 0 25px 25px 0;
+    font-size: 1em;
+    max-height: 1027px;
+    margin-bottom: 2vmax;
+}
+.juicy-logo {
+    padding-top: 1vmax;
+}
+
+.kuponkit {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.arvo-nappi {
+    position: absolute;
+    left: 45%;
+    bottom: 5%;
+    transform: translate(-50%, -50%);
+}
+
+.row {
+    /*flex-wrap: nowrap;*/
+}
+
+/*.div-table-row {*/
+/*    display: table-row;*/
+/*    clear: both;*/
+/*    width: 100%;*/
+/*}*/
+/*.div-table-col {*/
+/*  float: left; !* fix for  buggy browsers *!*/
+/*  display: table-column;*/
+/*  width: auto;*/
+/*  background-color: #ccc;*/
+/*}*/
+
+.bingo-card-header {
+    font-family: bingo, serif;
+    font-size: 4em;
+    color: white;
+    padding-left: 2.32rem;
+    padding-right: 2rem;
+}
+
+.bingo-card {
+    background-color: #addc91;
+    text-align: center;
+    border-radius: 25px;
+    max-width: 400px;
+
+}
+
+.number-row {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.padding-row {
+    padding: 7px 0;
+}
+
+.bingo-number, .bingo-number-marked {
+    font-family: bingo-numbers, sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 2px 0 !important;
+    margin: 2px;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+
+}
+
+.bingo-number-marked {
+    background-image: url("../images/marker_1_1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.free-number {
+    font-family: bingo-numbers, sans-serif;
+    font-weight: bold;
+    padding: 2px 0 !important;
+    margin: 2px;
+}
+
+.star {
+    height: 2.5em;
+    width: 2.5em;
+    transform: rotate(15deg);
+}
+
+.bingo-star {
+    fill: #ffffff;
+}
+
+.marker {
+    /*top: 50%;*/
+    /*left: 50%;*/
+    top: 5%;
+    left: 21%;
+    position: absolute;
+    z-index: 10;
+    visibility: hidden;
+}
+
+
+.marker-circle-svg {
+    height: 1em;
+    width: 1em;
+}
+
+.marker-circle {
+    opacity: 0.5;
+    stroke: black;
+    stroke-width: 2;
+    fill: cornflowerblue;
+}
+
+
+.bingo-footer {
+    font-family: bingo-numbers, sans-serif;
+    font-size: 2em;
+    color: white;
+}
+
+.bingo-card-seed {
+    text-align: right;
+    padding-right: 2rem;
+    margin-top: 2rem;
+}
+
+.bingo-card-counter {
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 2rem;
+
+}

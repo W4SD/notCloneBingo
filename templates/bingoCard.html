@@ -1,0 +1,61 @@
+<!-- bingoCard.html -->
+
+<div class="row">
+  {% for BingoCard in BingoCards %}
+
+    <div class="col-auto">
+
+
+      <div class="bingo-card">
+
+        <div class="row bingo-card-header">
+          <div class="col">B</div>
+          <div class="col">I</div>
+          <div class="col">N</div>
+          <div class="col">G</div>
+          <div class="col">O</div>
+        </div>
+
+        {% set counter = 0 -%}
+        {% for row in range(15) %}
+          {% set outerloop = loop %}
+          <div class="row number-row">
+            {% for col in range(5) %}
+              {% if row in (2,7,12) and col == 2 %}
+                <div class="col free-number" data-cell-index="{{ outerloop.index0 * loop|length + loop.index0 }}">
+                  <svg class="star" aria-hidden="true" focusable="false" viewBox="0 0 576 512">
+                    <path class="bingo-star"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                  </svg>
+                </div>
+              {% else %}
+                <div background class="col game-cell bingo-number"
+                     data-cell-index="{{ outerloop.index0 * loop|length + loop.index0 }}">
+                  {{ BingoCard.cols[col][row] }}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% if row == 4 or row == 9 %}
+            <div class="row padding-row"></div>
+          {% endif %}
+        {% endfor %}
+
+        <div class="row bingo-footer bingo-card-seed">
+          <div class="col-12">{{ '%05d' % BingoCard.card_seed }}</div>
+        </div>
+        <div class="row bingo-footer bingo-card-counter">
+          <div class="col-12">juicy.games</div>
+        </div>
+      </div>
+
+    </div>
+
+  {% endfor %}
+</div>
+
+{# marker
+<svg height='100' width='100'>
+  <circle opacity='0.3' cx='50' cy='50' r='40' stroke='black' stroke-width='2' fill='CornflowerBlue' />
+</svg>
+#}
