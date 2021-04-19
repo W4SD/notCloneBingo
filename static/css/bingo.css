@@ -68,7 +68,7 @@ body {
 }
 
 .row {
-    /*flex-wrap: nowrap;*/
+    flex-wrap: nowrap !important;
 }
 
 /*.div-table-row {*/

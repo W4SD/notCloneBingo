@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 from generator import BingoCard
 import json
 
@@ -11,7 +11,6 @@ def enter_site():
     if request.method == "POST":
 
         data = json.loads(request.data)
-        print(data)
         for x in range(data):
             new_card = BingoCard()
             BingoCards.append(new_card)
